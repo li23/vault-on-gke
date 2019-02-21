@@ -1,14 +1,11 @@
-# HashiCorp Vault on GKE with Terraform
+# HashiCorp Vault on GKE with Terraform 
 
-This tutorial walks through provisioning a highly-available [HashiCorp
+This repo walks through provisioning a highly-available [HashiCorp
 Vault][vault] cluster on [Google Kubernetes Engine][gke] using [HashiCorp
 Terraform][terraform] as the provisioning tool.
 
-This tutorial is based on [Kelsey Hightower's Vault on Google Kubernetes
-Engine][kelseys-tutorial], but focuses on codifying the steps in Terraform
-instead of teaching you them individually. If you would like to know how to
-provision HashiCorp Vault on Kuberenetes step-by-step (aka "the hard way"),
-please follow Kelsey's repository instead.
+This repo is based on [Kelsey Hightower's Vault on Google Kubernetes
+Engine][kelseys-tutorial]. 
 
 
 ## Feature Highlights
@@ -33,20 +30,22 @@ please follow Kelsey's repository instead.
   with minimal additional configuration.
 
 
-## Tutorial
+## Requirements
 
 1. Download and install [Terraform][terraform].
 
-1. Download, install, and configure the [Google Cloud SDK][sdk]. You will need
+2. Download, install, and configure the [Google Cloud SDK][sdk]. You will need
    to configure your default application credentials so Terraform can run. It
    will run against your default project, but all resources are created in the
    (new) project that it creates.
 
-1. Install the [kubernetes
+3. Install the [kubernetes
    CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (aka
    `kubectl`)
 
-1. Run Terraform:
+## Deployment
+
+4. Run Terraform:
 
     ```text
     $ cd terraform/
@@ -57,18 +56,18 @@ please follow Kelsey's repository instead.
     This operation will take some time as it:
 
     1. Creates a new project
-    1. Enables the required services on that project
-    1. Creates a bucket for storage
-    1. Creates a KMS key for encryption
-    1. Creates a service account with the most restrictive permissions to those resources
-    1. Creates a GKE cluster with the configured service account attached
-    1. Creates a public IP
-    1. Generates a self-signed certificate authority (CA)
-    1. Generates a certificate signed by that CA
-    1. Configures Terraform to talk to Kubernetes
-    1. Creates a Kubernetes secret with the TLS file contents
-    1. Configures your local system to talk to the GKE cluster by getting the cluster credentials and kubernetes context
-    1. Submits the StatefulSet and Service to the Kubernetes API
+    2. Enables the required services on that project
+    3. Creates a bucket for storage
+    4. Creates a KMS key for encryption
+    5. Creates a service account with the most restrictive permissions to those resources
+    6. Creates a GKE cluster with the configured service account attached
+    7. Creates a public IP
+    8. Generates a self-signed certificate authority (CA)
+    9. Generates a certificate signed by that CA
+    10. Configures Terraform to talk to Kubernetes
+    11. Creates a Kubernetes secret with the TLS file contents
+    12. Configures your local system to talk to the GKE cluster by getting the cluster credentials and kubernetes context
+    13. Submits the StatefulSet and Service to the Kubernetes API
 
 
 ## Interact with Vault
