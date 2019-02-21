@@ -43,6 +43,8 @@ Engine][kelseys-tutorial].
    CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (aka
    `kubectl`)
 
+4. The GCP service account used to deploy this code will need the `Billing User` and `Project Creator` roles before deploying. 
+
 ## Deployment
 
 4. Run Terraform:
@@ -102,7 +104,7 @@ device on `stdout`:
 $ vault audit enable file file_path=stdout
 ```
 
-That's it! Vault will now log all audit requests to Stackdriver. Additionally,
+That's it. Vault will now log all audit requests to Stackdriver. Additionally,
 because the configuration uses an L4 load balancer, Vault does not need to
 parse `X-Forwarded-For` headers to extract the client IP, as requests are
 passed directly to the node.
