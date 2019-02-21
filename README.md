@@ -5,7 +5,7 @@ Vault][vault] cluster on [Google Kubernetes Engine][gke] using [HashiCorp
 Terraform][terraform] as the provisioning tool.
 
 This repo is based on [Kelsey Hightower's Vault on Google Kubernetes
-Engine][kelseys-tutorial]. 
+Engine Work][kelseys-tutorial]. 
 
 
 ## Feature Highlights
@@ -43,7 +43,7 @@ Engine][kelseys-tutorial].
    CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (aka
    `kubectl`)
 
-4. The GCP service account used to deploy this code will need the `Billing User` and `Project Creator` roles before deploying. 
+4. **Important**: The GCP service account used to deploy this code will need the `Billing User` and `Project Creator` roles before deploying. 
 
 ## Deployment
 
