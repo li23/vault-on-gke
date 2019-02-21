@@ -47,13 +47,17 @@ Engine][kelseys-tutorial].
 
 ## Deployment
 
-4. Run Terraform:
+1. Runners have been included at the root of the repo:
 
-    ```text
-    $ cd terraform/
-    $ terraform init
-    $ terraform apply
-    ```
+- plan_runner.sh
+- apply_runner.sh
+- destroy._runner.sh
+
+Each runner passes the organization and billing account IDs. Adjust accordingly to the specific account:
+
+`TF_VAR_org_id=<orgid> TF_VAR_billing_account=<billingaccountid> terraform plan`
+
+2. Run `plan_runner.sh` to get a plan. Run `apply_runner.sh` to deploy.
 
     This operation will take some time as it:
 
